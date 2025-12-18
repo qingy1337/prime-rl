@@ -1,0 +1,58 @@
+inference_gpu_ids = [0,1,2]
+trainer_gpu_ids = [3]
+
+max_steps = 1000
+
+[model]
+name = "qingy2024/Refined-Gem-4B-Thinking"
+
+[wandb]
+project = "huggingface"
+name = "Amethyst-4B-RL"
+
+[trainer.optim]
+lr = 1e-5
+weight_decay = 0.0
+
+[trainer.model.lora]
+rank = 64
+alpha = 64
+dropout = 0.0
+target_modules = [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+]
+
+[orchestrator]
+batch_size = 64
+rollouts_per_example = 16
+seq_len = 4096
+oversampling_factor = 2.0
+lora_name = "amethyst-4b-rl"
+
+[orchestrator.sampling]
+max_tokens = 8192
+
+[orchestrator.buffer]
+online_difficulty_filtering = true
+
+[[orchestrator.env]]
+id = "primeintellect/i3-code"
+
+[[orchestrator.env]]
+id = "primeintellect/i3-logic"
+
+[[orchestrator.env]]
+id = "primeintellect/i3-math"
+
+[[orchestrator.env]]
+id = "primeintellect/i3-science"
+
+[inference.model]
+enable_auto_tool_choice = true
+tool_call_parser = "hermes"
