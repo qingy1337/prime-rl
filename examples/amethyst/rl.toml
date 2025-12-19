@@ -56,3 +56,4 @@ id = "primeintellect/i3-science"
 [inference.model]
 enable_auto_tool_choice = true
 tool_call_parser = "hermes"
+max_model_len = 16000
