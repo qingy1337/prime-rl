@@ -42,9 +42,6 @@ max_tokens = 8192
 online_difficulty_filtering = true
 
 [[orchestrator.env]]
-id = "primeintellect/i3-code"
-
-[[orchestrator.env]]
 id = "primeintellect/i3-logic"
 
 [[orchestrator.env]]
