@@ -15,10 +15,10 @@ In this example, we demonstrate how to train `Refined-Gem-4B-Thinking` on the In
 Install the Intellect-3 environments:
 
 ```bash
-prime env install primeintellect/i3-code
-prime env install primeintellect/i3-logic
-prime env install primeintellect/i3-math
-prime env install primeintellect/i3-science
+uv run prime env install primeintellect/i3-code
+uv run prime env install primeintellect/i3-logic
+uv run prime env install primeintellect/i3-math
+uv run prime env install primeintellect/i3-science
 ```
 
 Verify installation:
