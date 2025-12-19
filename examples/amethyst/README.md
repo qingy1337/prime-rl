@@ -85,8 +85,8 @@ Train with the unified config file:
 ```bash
 # In the `Trainer` pane
 uv run rl @ examples/amethyst/rl.toml \
-  --wandb.project your-project-name \
-  --wandb.name your-run-name
+  --wandb.project huggingface \
+  --wandb.name Amethyst-4B-RL
 ```
 
 The unified config file automatically configures:
